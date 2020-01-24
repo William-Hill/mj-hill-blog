@@ -1,6 +1,13 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
-import { FaBars, FaTimes, FaGithub, FaLinkedin, FaRss } from 'react-icons/fa'
+import {
+  FaBars,
+  FaTimes,
+  FaGithub,
+  FaLinkedin,
+  FaInstagram,
+  FaTwitter,
+} from 'react-icons/fa'
 /* App imports */
 import useEvent from '../../hooks/useEvent'
 import style from './header.module.less'
@@ -64,10 +71,20 @@ const Header = () => {
             <Link to={Utils.resolvePageUrl(Config.pages.home)}>Home</Link>
           </li>
           <li>
-            <Link to={Utils.resolvePageUrl(Config.pages.tag)}>Tags</Link>
+            <Link to={Utils.resolvePageUrl(Config.pages.about)}>About</Link>
           </li>
           <li>
-            <Link to={Utils.resolvePageUrl(Config.pages.about)}>About</Link>
+            <Link to={Utils.resolvePageUrl(Config.pages.speaking)}>
+              Speaking
+            </Link>
+          </li>
+          <li>
+            <Link to={Utils.resolvePageUrl(Config.pages.projects)}>
+              Projects
+            </Link>
+          </li>
+          <li>
+            <Link to={Utils.resolvePageUrl(Config.pages.media)}>Media</Link>
           </li>
         </ul>
         <ul>
@@ -90,9 +107,22 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <Link to={Utils.resolveUrl(Config.social.rss)}>
-              <FaRss size="30" />
-            </Link>
+            <a
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              href={Config.social.instagram}
+            >
+              <FaInstagram size="30" />
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              href={Config.social.twitter}
+            >
+              <FaTwitter size="30" />
+            </a>
           </li>
         </ul>
       </div>
